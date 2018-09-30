@@ -1,12 +1,6 @@
 <template>
     <div>
-        <search-component>
-            <div>
-                <search-component placeholder="두 글자 이상 입력 후 엔터!" v-on:search="searchEvent"></search-component>
-                <contactlist-component v-bind:contacts="contactlist"></contactlist-component>
-                <div v-show="isProcessing === true">조회중</div>
-            </div>
-        </search-component>
+        <div v-show="isProcessing === true">조회중</div>
     </div>
 </template>
 <script>

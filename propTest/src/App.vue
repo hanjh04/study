@@ -1,23 +1,22 @@
 <template>
-  <div>
-    <!-- <TodoHeader></TodoHeader>
-    <TodoInput v-on:addTodo="addTodo"></TodoInput>
-    <TodoList v-bind:propsdata="todoItems" @removeTodo="removeTodo"></TodoList>
-    <TodoFooter v-on:removeAll="clearAll"></TodoFooter> -->
+  <div id="app">
     <search-contact></search-contact>
+    <search-component placeholder="두 글자 이상 입력 후 엔터!" v-on:search="searchEvent"></search-component>
+    <contact-list v-bind:contacts="contactlist"></contact-list>
   </div>
 </template>
 
-
 <script>
-Vue.config.devtools = true;
-import SearchContact from "./components/SearchContact.vue"    
-
+import SearchContact from "./components/SearchContact.vue"
+import Search from "./components/Search.vue"
+import ContactList from "./components/ContactList.vue"
 
 export default {
     name: "App",
     components: {
-        SearchContact,
+        'search-contact':SearchContact,
+        'search-component':Search,
+        'contact-list':ContactList
     }
 }
 </script>
