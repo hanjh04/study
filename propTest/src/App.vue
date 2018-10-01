@@ -9,14 +9,12 @@
 
 <script>
 import SearchContact from "./components/SearchContact.vue"
-import Search from "./components/Search.vue"
 import ContactList from "./components/ContactList.vue"
 
 export default {
     name: "App",
     components: {
         'SearchContact':SearchContact,
-        'SearchComponent':Search,
         'ContactList':ContactList
     },
     methods:{
