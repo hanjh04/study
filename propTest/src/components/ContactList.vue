@@ -19,7 +19,23 @@
     </div>
 </template>
 <script>
+import {eventBus} from "../utils/eventBus.js"
+
 export default{
-    props:['contacts']
+    data:function(){
+        return {contacts:{}}; 
+    },
+    created: function() {
+        var vm = this;
+        eventBus.$on('setContactList', function(contact){
+            vm.setList(contact)
+        })
+    },
+    methods:{
+        setList: function (contactList){
+            this.contacts = contactList;
+        }
+    }
+
 }
 </script>
