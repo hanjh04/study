@@ -1,0 +1,97 @@
+<template>
+  <div>
+    <todo-header></todo-header>
+    <todo-input v-on:send="addTodoItem"></todo-input>
+    <todo-list v-on:delete="removeTodoItem" v-bind:propsdata="todoItems"></todo-list>
+    <todo-footer></todo-footer>
+    <!-- <todo-footer v-on:delete:all="clearAllTodoItems"></todo-footer> -->
+    <!-- <todo-footer v-on:올라온 이벤트="수행할 메서드"></todo-footer> -->
+  </div>
+</template>
+
+<script>
+import TodoHeader from "./components/TodoHeader.vue";
+import TodoInput from "./components/TodoInput.vue";
+import TodoList from "./components/TodoList.vue";
+import TodoFooter from "./components/TodoFooter.vue";
+import {eventBus} from "./utils/eventBus.js"
+
+export default {
+  name: "App",
+  components: {
+    TodoHeader,
+    TodoInput,
+    TodoList,
+    TodoFooter,
+  },
+  data: function() {
+    return {
+      todoItems: []
+    }
+  },
+  created: function() {
+    // if (localStorage.length > 0) {
+    //   for (var i = 0; i < localStorage.length ; i++) {
+    //     if (localStorage.key(i) !== 'running') {
+    //       var item = localStorage.key(i);
+    //       this.todoItems.push(item);
+    //     }
+    //   }
+    // }
+    //이 this는 컴포넌트를 가리킴.
+    var vm = this;
+    eventBus.$on('delete:all', function(){
+      //this는 eventbus 의 component
+      // this.clearAllTodoItems();
+
+      vm.clearAllTodoItems();
+    })
+  // eventBus.$on('delete:all', this.clearAllTodoItems) 이것도 가능~~
+  },
+  method:{
+    // v-on에서 명시를 안해주엇더라도 value는 암묵적으로 내려감.
+    addTodoItem:function(value){
+      
+      // 데이터를 저장소에 추가
+      // localStorage.setItem(value, value);
+      // 데이터를 뷰 인스턴스 데이터 속성에 추가(배열에 추가)
+      // this.todoItems.push(value);
+
+      var value=this.todoItem;
+      this.$emit('send', value)
+      this.todoItem  = '';
+    },
+
+    removeTodoItem:function(todoItem, index){
+        localstorage.removeItem(todoItem);
+        this.todoItems.splice(index, 1)
+    },
+    // removeTodoItem:function(deleteItem){
+    //     localstorage.removeItem(deleteItem.todoItem);
+    //     this.todoItems.splice(deleteItem.index, 1)
+    // }
+    clearAllTodoItems:function(){
+      localStorage.clear();
+      this.todoItems=[];
+    },
+  }
+  
+};
+</script>
+  
+<style>
+  body {
+    text-align: center;
+    background-color: #F6F6F8;
+  }
+  input {
+    border-style: groove;
+    width: 200px;
+  }
+  button {
+    border-style: groove;
+  }
+  .shadow {
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.03)
+  }
+</style>
