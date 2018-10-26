@@ -9,8 +9,8 @@
 
 ## 작업
 * index.js 생성
-* axios 설치 `npm i axios vuex`
-
+* axios, vuex 설치 `npm i axios vuex`
+* vue-router 설치 `npm i vue-router`
 ```
 -- cli 3.0 부터
 vue create vue-news
@@ -26,3 +26,10 @@ vue create vue-news
 $.ajax()
 axios.get()
 fetch()
+
+
+
+
+
+1. default는 한 파일에서 1개만 export 된다.
+2. default 로 export 하면 import에서는 `{}` 쓸 수 없다.
