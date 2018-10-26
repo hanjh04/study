@@ -1,6 +1,9 @@
 <template>
     <div>
-        <button @click="fetchData">fetch data</button>
+        <div v-for="item in items" :key="item.id">
+            <li></li>
+
+        </div>
     </div>
 </template>
 
@@ -12,7 +15,7 @@ export default {
     methods:{
         fetchData(){
             fetchNews()
-            .then(data => console.log(data))
+            .then(({data}) => this.items = data)
             .then(function(data){
 
             })
