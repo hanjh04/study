@@ -26,18 +26,13 @@ export default {
     //         // fetchNews()
     //         // .then(({data}) => this.items = data)
     //         // .then(function(data){
-
     //         // })
     //         // .then((data) => {
-
     //         // })
     //         // .then(data => {
-
     //         // })
     //         // .then(data => data)// 한줄로 줄인다 => return을 의미.
     //         // .catch(error => console.log(error));
-
-
     //     }
     // },
     created() {
@@ -49,5 +44,4 @@ export default {
 </script>
 
 <style>
-
 </style>

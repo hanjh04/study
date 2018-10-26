@@ -6,7 +6,6 @@
 
 <script>
 import {fetchJobs} from '../api/index.js';
-
 export default {
     // created(){
     //     fetchJobs()
@@ -22,5 +21,4 @@ export default {
 </script>
 
 <style>
-
 </style>
