@@ -35,9 +35,9 @@ npm run lint
 ```
 
 ## file structure and detail
-```bash
+```tree
 vue-news
-├─`README.md`
+├─README.md
 ├─`package.json`
 ├─`package-lock.json`
 ├─`babel.config.js`
