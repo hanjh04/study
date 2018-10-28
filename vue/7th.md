@@ -33,3 +33,4 @@ fetch()
 
 1. default는 한 파일에서 1개만 export 된다.
 2. default 로 export 하면 import에서는 `{}` 쓸 수 없다.
+3. console에서 vue 객체를 접근하기 위해서 `window.__VUE_DEVTOOLS_INSTANCE_MAP__.get({key})`를 사용할 수 있다.
