@@ -1,43 +1,49 @@
 <template>
   <div class="inputBox shadow">
-    <input v-model="todoItem" type="text">
-    <span class="addContainer" v-on:click="addItem">
-      <i class="addBtn fas fa-plus"></i>
+    <input type="text" v-model="newTodoItem" @keyup.enter="addTodo">
+    <span class="addContainer" v-on:click="addTodo">
+      <i class="addBtn fas fa-plus" aria-hidden="true"></i>
     </span>
 
-    <app-modal v-if="showModal" @close="showModal = false">
-      <div slot="header">header</div>
-      <div slot="body">body</div>
-      <div slot="footer">footer</div>
-    </app-modal>
+    <Modal v-if="showModal" @close="showModal = false">
+      <h3 slot="header">
+        경고
+        <i class="closeModalBtn fa fa-times"
+          aria-hidden="true"
+          @click="showModal = false">
+        </i>
+      </h3>
+      <p slot="body">할 일을 입력하세요.</p>
+    </Modal>
   </div>
 </template>
 
 <script>
-import AppModal from './common/AppModal.vue';
-
+import Modal from './common/Modal.vue'
 export default {
-  components: {
-    'app-modal': AppModal
-  },
-  data: function() {
+  data() {
     return {
-      todoItem: '',
+      newTodoItem: '',
       showModal: false
     }
- },
- methods: {
-   addItem: function() {
-     if (this.todoItem.length > 0) {
-      var value = this.todoItem; 
-      // this.$emit('send', value);
-      this.$store.commit('addTodoItem', value);
-      this.todoItem = '';
-     } else {
-      this.showModal = true;
-     }
-   }
- }
+  },
+  methods: {
+    addTodo() {
+      if (this.newTodoItem !== '') {
+        const item = this.newTodoItem.trim();
+        this.$store.commit('addOneItem', item);
+        this.clearInput();
+      } else {
+        this.showModal = !this.showModal;
+      }
+    },
+    clearInput() {
+      this.newTodoItem = '';
+    }
+  },
+  components: {
+    Modal
+  }
 }
 </script>
 
@@ -65,5 +71,8 @@ input:focus {
 .addBtn {
   color: white;
   vertical-align: middle;
+}
+.closeModalBtn {
+  color: #42b983;
 }
 </style>

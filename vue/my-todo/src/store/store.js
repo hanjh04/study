@@ -24,5 +24,5 @@ export const store = new Vuex.Store({
         todoItems: storage.fetch()
     },
     getters: getters,
-    mutatinos: mutations
+    mutations: mutations
 });

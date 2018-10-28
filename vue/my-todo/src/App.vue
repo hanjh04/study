@@ -2,7 +2,7 @@
   <div>
     <todo-header></todo-header>
     <todo-input></todo-input>
-    <todo-list v-on:delete="removeTodoItem"></todo-list>
+    <todo-list></todo-list>
     <todo-footer></todo-footer>
   </div>
 </template>
@@ -12,7 +12,6 @@ import TodoHeader from "./components/TodoHeader.vue";
 import TodoInput from "./components/TodoInput.vue";
 import TodoList from "./components/TodoList.vue";
 import TodoFooter from "./components/TodoFooter.vue";
-import { eventBus } from './utils/eventBus.js';
 
 export default {
   name: "App",
@@ -23,10 +22,10 @@ export default {
     TodoFooter,
   },
   methods: {
-    clearAllTodoItems: function() {
-      localStorage.clear(); 
-      this.todoItems = [];
-    }
+    // clearAllTodoItems: function() {
+    //   localStorage.clear(); 
+    //   this.todoItems = [];
+    // }
   },
     // 이벤트 버스 수신 로직
     // App 컴포넌트 38번

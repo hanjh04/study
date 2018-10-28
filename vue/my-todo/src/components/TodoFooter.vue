@@ -1,30 +1,31 @@
 <template>
-  <div>
-    <!-- <button @click="">Clear All</button> -->
-    <button v-on:click="removeAllItems">Clear All</button>
+  <div class="clearAllContainer">
+    <span class="clearAllBtn" v-on:click="clearTodo">Clear All</span>
   </div>
 </template>
 
 <script>
-import { eventBus } from '../utils/eventBus.js';
-
+import { mapMutations } from 'vuex'
 export default {
-    methods:{
-        removeAllItems: function(){
-            this.todoItems = [];
-            // localStorage.clear();
-            //이전
-            // this.$emit('deleteAll');
-            //최신
-            // this.$emit('delete:all');
-            eventBus.$emit('delete:all');
-
-
-        }
-    }
+  methods: {
+    ...mapMutations({
+      clearTodo: 'clearAllItems'
+    })
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+.clearAllContainer {
+  width: 8.5rem;
+  height: 50px;
+  line-height: 50px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.clearAllBtn {
+  color: #e20303;
+  display: block;
+}
 </style>

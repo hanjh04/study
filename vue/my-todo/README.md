@@ -33,3 +33,10 @@ npm run lint
 ```
 
 ## file structure and detail
+
+### Components
+* ### TodoHeader
+    * Header
+* ### TodoInput
+* ### TodoList
+* ### TodoFooter

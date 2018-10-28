@@ -1,6 +1,7 @@
 <template>
   <header>
-    <h1>{{ appTitle }}</h1>
+    <h1 v-text="appTitle"></h1>
+    <!-- <h1>{{appTitle}}</h1> -->
   </header>
 </template>
 
@@ -8,7 +9,7 @@
 export default {
   data: function() {
     return {
-      appTitle: 'Vue TODO'
+      appTitle: 'My TODO'
     }
   }
 }
