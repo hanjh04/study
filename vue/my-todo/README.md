@@ -1,18 +1,35 @@
 # my-todo
 
-> A Vue.js project
+## 사용 기술
+* vue-cli 3.0
+* vuex
 
-## Build Setup
+## Project Setup
+### Project Create
+```
+vue create my-todo
+cd my-todo
+vue i vuex
+```
 
-``` bash
-# install dependencies
-npm install
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
+### Compiles and minifies for production
+```
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+## file structure and detail
