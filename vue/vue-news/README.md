@@ -34,10 +34,11 @@ npm run test
 npm run lint
 ```
 
-## file structure and detail
+## File Structure and Details
+### File Structure
 ```tree
 vue-news
-├─README.md
+├─`README.md`
 ├─`package.json`
 ├─`package-lock.json`
 ├─`babel.config.js`
@@ -67,3 +68,7 @@ vue-news
         ├─`NewsView.vue`
         └─`UserView.vue`
 ```
+### Details
+* `main.js`
+    * 프로젝트의 진입점.
+    * `Vue`를 로드 하고 `App.vue`를 로드하고 앱을 초기화 함.
