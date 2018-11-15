@@ -5,11 +5,16 @@
 * vuex
 
 ## Project Setup
+### Project Presetting
+```bash
+# nodejs 설치 후
+npm install -g @vue/cli
+```
 ### Project Create
 ```
 vue create my-todo
 cd my-todo
-vue i vuex
+vue i vuex(npm install --save vuex)
 ```
 
 ### Compiles and hot-reloads for development
