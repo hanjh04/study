@@ -1,16 +1,20 @@
-import { fetchNews } from '../api/index'
+import { fetchNews, fetchJobs } from '../api/index.js';
 
 export default {
-    FETCH_NEWS({ commit }) {
-        fetchNews()
-            .then(response => {
-                response.data;
-                // context.commit('뮤테이션명', response.data)
-                commit('SET_NEWS', response.data)
-            })
-            .catch((error) => {
-                error
-                // console.log(error)
-            })
-    }
+  FETCH_NEWS(context) {
+    return fetchNews()
+      .then(response => {
+        context.commit('SET_NEWS', response.data);
+        return response;
+      })
+      .catch(error => console.log(error));
+  },
+  FETCH_JOBS({ commit }) {
+    return fetchJobs()
+      .then(response => {
+        commit('SET_JOBS', response.data);
+        return response;
+      })
+      .catch(error => console.log(error));
+  }
 }
