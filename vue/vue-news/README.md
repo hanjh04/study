@@ -34,11 +34,12 @@ npm run test
 npm run lint
 ```
 
-## TODO LIST
+## TODO LIST and Details
+### TODO LIST
 
 idx|기능|내용|완료
--|-|-|-
-1|router|프로젝트 생성 및 라우터 설정|
+-|-|-|:-:
+1|router|프로젝트 생성 및 라우터 설정|O
 2|store|스토어 설치, 초기화 및 vuex 관련 파일 생성|
 3|api|api 파일 생성 및 액시오스 설치<br>각 페이지뷰에서 api호출 및 결과 확인<br>ToolBar(헤더)컴포넌트 생성|
 4|page|News, Ask, Jobs 페이지에서 api 호출하여 리스트 표시|
@@ -51,6 +52,42 @@ idx|기능|내용|완료
 11|sticky‑header|scroll 이벤트를 이용한 헤더 컴포넌트 고정 기능 구현|
 12|spinner|스피너 라이브러리를 설치하여 대체해보기 ‑ Spinner 컴포넌트 모듈화 및 이벤트 버스를 이용한 구현|
 13|etc|api 파일의 axios 인스턴스 정리
+
+### Details
+1. router
+    1. 설치
+        * `npm i vue-router`
+    2. 폴더 구조
+        ```
+        └─src
+            └─routes
+                └─`index.js`
+        ```
+    3. 파일 내용
+        * 화면 구성에 필요한 `view` import
+        * `Vue.use(VueRouter)`로 router 등록
+        * URI 정의, 각 URI에 보여줄 `view` 등록
+
+2. store
+    1. 설치
+        * `npm i vuex`
+    2. 폴더 구조
+        ```
+        └─src
+            └─store
+                ├─`index.js`
+                ├─`getters.js`
+                ├─`actions.js`
+                ├─`mutations.js`
+                └─`state.js`
+        ```   
+    3. 파일 내용
+        * index.js
+            * vuex 진입점.
+            * `getters.js`, `mutaions.js`, `actions.js` 파일 import
+        
+
+
 
 ## File Structure and Details
 ### File Structure
@@ -76,7 +113,6 @@ vue-news
     │   ├─`actions.js`
     │   ├─`getters.js`
     │   ├─`index.js`
-    │   ├─`math.js`
     │   ├─`mutations.js`
     │   └─`state.js`
     └─views
