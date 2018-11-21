@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import {fetchJobs} from '../api/index.js';
+import {fetchAsk} from '../api/index.js';
 export default {
     created(){
-        fetchAsk()
+        this.$store.dispatch('FETCH_ASK')
         .then(data => console.log(data))
         .catch(error => console.log(error))
     }
