@@ -84,7 +84,38 @@ idx|기능|내용|완료
     3. 파일 내용
         * index.js
             * vuex 진입점.
-            * `getters.js`, `mutaions.js`, `actions.js` 파일 import
+            * `getters.js`, `mutaions.js`, `actions.js`, `state.js` 파일 import
+            * getters, mutations, actions, state 를 store 객체의 인자로 넘김.
+        * state.js
+            * 관리하는 데이터.
+            * `news`, `ask`, `jobs`, `user`, `item`
+        * mutations.js
+            * 상태변경
+            * synchronous 작업
+            * `set` 작업
+        * actions.js
+            * 외부 api 호출
+            * asynchronous 작업
+            * `fetch` 작업
+            * Instead of mutating the state, actions `commit` mutations.
+            * Actions are triggered with the store.dispatch method:
+                * `store.dispatch('increment')`
+        * getters.js
+            *
+3. api   
+    1. 설치
+        * `npm i axios`
+    2. 폴더구조
+        ```
+        └─src
+            └─api
+                └─`index.js`
+        ```
+    3. 파일 내용
+        * api 정의
+
+
+
         
 
 
