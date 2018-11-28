@@ -3,7 +3,7 @@
     <a href="/" class="logo">
         <img src="../assets/thumbnail.png" style="height:50px;width:50px"/>
     </a>
-    <h1>Lingi Home</h1>
+    <h1>Home</h1>
 </div>
 
 
