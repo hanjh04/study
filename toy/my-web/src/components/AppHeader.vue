@@ -1,8 +1,9 @@
 <template>
 <div class="header">
-    <a href="default" class="logo">
+    <a href="/" class="logo">
         <img src="../assets/thumbnail.png" style="height:50px;width:50px"/>
     </a>
+    <h1>Lingi Home</h1>
 </div>
 
 
@@ -24,34 +25,34 @@ export default {
     text-align:center;
 } */
 /* Style the header with a grey background and some padding */
-.header {
+/* .header {
   overflow: hidden;
-  padding: 20px 10px;
+  padding: 30px 10px;
   height:40px;
-}
+} */
 
 /* Style the header links */
 .header a {
   float: left;
   color: black;
-  text-align: center;
+  /* text-align: center;
   padding: 12px;
   text-decoration: none;
   font-size: 18px; 
   line-height: 25px;
-  border-radius: 4px;
+  border-radius: 4px; */
   
 }
-.header a img { 
+/* .header a img { 
     max-width:100%;
     height:auto;
-}
+} */
 
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
-.header a.logo {
+/* .header a.logo {
   font-size: 25px;
   font-weight: bold;
-}
+} */
 
 /* Change the background color on mouse-over */
 .header a:hover {
