@@ -14,6 +14,15 @@ export default new VueRouter({
         {
             path: '/git',
             name: 'git',
+            component: GitRepo,
+            children: [{
+                path: ':p',
+                name: 'path',
+                component: 'GitRepo'
+            }]
+        },
+        {
+            path: '/git/:folderName',
             component: GitRepo
         }
     ]
