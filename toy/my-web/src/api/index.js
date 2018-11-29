@@ -10,7 +10,6 @@ const api = {
 
 function fetchGitRepo(filepath) {
     filepath = filepath || ''
-    console.log(api.git.repo + '/' + filepath)
     return axios.get(api.git.repo + '/' + filepath);
 }
 
