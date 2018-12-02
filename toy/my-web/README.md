@@ -34,3 +34,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 2. vue create {project name}
 3. cd {project name}
 4. git checkout ./
+
+## todo
+* query string 전달하여 query string 인자별 다른 action 취하기
