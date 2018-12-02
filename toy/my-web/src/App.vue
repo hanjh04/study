@@ -2,7 +2,7 @@
   <div id="app">
     <app-header/>
     <app-nav/>
-    <router-view/>
+    <router-view :key="$route.path"/>
     <app-footer/>
   </div>
 </template>
@@ -18,8 +18,7 @@ export default{
     AppHeader,
     AppNav,
     AppFooter
-  }
-
+  },
 }
 
 </script>
