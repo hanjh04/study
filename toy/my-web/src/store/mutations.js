@@ -4,5 +4,8 @@ export default {
     },
     SET_GITCONTENT(state, repoContent) {
         state.repoContent = repoContent;
+    },
+    SET_POSTS(state, posts) {
+        state.posts = posts;
     }
 }

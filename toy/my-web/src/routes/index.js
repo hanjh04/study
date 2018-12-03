@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import HelloWorld from '../components/HelloWorld';
 // import GitRepo from '../components/GitRepo'
 import GitRepoView from '../views/GitRepoView'
+import PostsView from '../views/PostsView'
 import store from '../store/index.js';
 
 Vue.use(VueRouter);
@@ -14,8 +15,11 @@ export default new VueRouter({
             component: HelloWorld
         },
         {
+            path: '/posts',
+            component: PostsView,
+        },
+        {
             path: '/git',
-            name: 'git',
             component: GitRepoView,
             beforeEnter(routeTo, routeFrom, next) {
                 store.dispatch('FETCH_GITREPO')
@@ -24,23 +28,19 @@ export default new VueRouter({
             }
         },
         {
-            path: '/git/:foo+/f',
-            name: 'gitContent',
-            component: GitRepoView,
-            // props: true,
-            beforeEnter(routeTo, routeFrom, next) {
-                store.dispatch('FETCH_GITCONTENT', window.location.pathname.replace('/git', '').replace('/f', ''))
-                    .then(() => next())
-                    .catch(() => console.log('fail'));
-            }
-        },
-        {
-            path: '/git/:foo+/d',
-            name: 'gitRepo',
+            path: '/git/:foo*',
             component: GitRepoView,
             beforeEnter(routeTo, routeFrom, next) {
-                console.log(routeTo.query)
-                store.dispatch('FETCH_GITREPO', window.location.pathname.replace('/git', ''))
+                var fetchAction = '';
+                var path = '';
+                console.log(routeTo.path)
+                if (routeTo.query.type === 'd') {
+                    fetchAction = 'FETCH_GITREPO';
+                } else {
+                    fetchAction = 'FETCH_GITCONTENT';
+                }
+                path = routeTo.path.replace('/git', '')
+                store.dispatch(fetchAction, path)
                     .then(() => next())
                     .catch(() => console.log('fail'));
             }

@@ -4,5 +4,8 @@ export default {
     },
     fetchedGitContentData(state) {
         return state.repoContent;
+    },
+    fetchedPosts(state) {
+        return state.posts;
     }
 };

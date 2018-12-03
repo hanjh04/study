@@ -6,3 +6,6 @@
 ## 해결방법
 * The behaviour you want to achieve used to be solved with a setting called canReuse, but that has been deprecated. The current recommended solution is to set a unique `:key` property on your `<router-view>`
 * 출처 : https://stackoverflow.com/questions/42603583/vue-js-same-component-with-different-routes/42610919
+
+## multiple nested routes
+* https://jsfiddle.net/nazgul_mamasheva/zrcLe9z7/1/

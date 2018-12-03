@@ -1,4 +1,4 @@
-import { fetchGitRepo, fetchGitContent } from '../api/index'
+import { fetchGitRepo, fetchGitContent, fetchPosts } from '../api/index'
 
 export default {
     FETCH_GITREPO(context, path) {
@@ -13,6 +13,14 @@ export default {
         return fetchGitContent(path)
             .then(response => {
                 context.commit('SET_GITCONTENT', response.data);
+                return response;
+            })
+            .catch(error => console.log(error))
+    },
+    FETCH_POSTS(context) {
+        return fetchPosts()
+            .then(response => {
+                context.commit('SET_POSTS', response.data);
                 return response;
             })
             .catch(error => console.log(error))

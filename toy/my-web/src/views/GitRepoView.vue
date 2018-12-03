@@ -11,7 +11,6 @@
 import { mapGetters } from 'vuex';
 import GitRepoContent from '../components/GitRepoContent';
 import GitRepoDirectory from '../components/GitRepoDirectory';
-
 export default {
     data() {
         return {
@@ -30,5 +29,4 @@ export default {
 </script>
 
 <style>
-
 </style>

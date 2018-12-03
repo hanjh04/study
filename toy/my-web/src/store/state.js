@@ -1,4 +1,5 @@
 export default {
     repoData: {},
-    repoContent: {}
+    repoContent: {},
+    posts: {}
 }

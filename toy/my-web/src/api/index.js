@@ -8,7 +8,8 @@ const git = {
 }
 
 const api = {
-    git
+    git,
+    posts: 'file///C:/Users/janghohan/Documents/GitHub/study/toy/my-web/src/api/dummy-data-posts/posts.json'
 }
 
 function fetchGitRepo(filepath) {
@@ -18,11 +19,15 @@ function fetchGitRepo(filepath) {
 
 function fetchGitContent(filepath) {
     filepath = filepath || ''
-    console.log(api.git.content + '/' + filepath)
     return axios.get(api.git.content + '/' + filepath);
+}
+
+function fetchPosts() {
+    return axios.get(api.posts);
 }
 
 export {
     fetchGitRepo,
-    fetchGitContent
+    fetchGitContent,
+    fetchPosts
 }
