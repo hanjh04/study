@@ -17,7 +17,6 @@ export default new VueRouter({
             path: '/git',
             name: 'git',
             component: GitRepoView,
-            query: { type: 'd' },
             beforeEnter(routeTo, routeFrom, next) {
                 store.dispatch('FETCH_GITREPO')
                     .then(() => next())
@@ -26,7 +25,7 @@ export default new VueRouter({
         },
         {
             path: '/git/:foo+/f',
-            name: 'git',
+            name: 'gitContent',
             component: GitRepoView,
             // props: true,
             beforeEnter(routeTo, routeFrom, next) {
@@ -37,10 +36,10 @@ export default new VueRouter({
         },
         {
             path: '/git/:foo+/d',
-            name: 'git',
+            name: 'gitRepo',
             component: GitRepoView,
-            query: { type: 'd' },
             beforeEnter(routeTo, routeFrom, next) {
+                console.log(routeTo.query)
                 store.dispatch('FETCH_GITREPO', window.location.pathname.replace('/git', ''))
                     .then(() => next())
                     .catch(() => console.log('fail'));
