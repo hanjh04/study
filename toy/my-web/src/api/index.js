@@ -1,4 +1,5 @@
 import axios from 'axios';
+import POSTS from './dummy-data/posts/posts.json'
 
 const git = {
     repo: 'https://api.github.com/repos/hanjh04/study/contents',
@@ -23,7 +24,9 @@ function fetchGitContent(filepath) {
 }
 
 function fetchPosts() {
-    return axios.get(api.posts);
+    // fake-api여서 주석처리. 12.04
+    // return axios.get(api.posts);
+    return POSTS;
 }
 
 export {
