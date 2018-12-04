@@ -1,19 +1,24 @@
 <template>
-<div>
-abcd
-</div>
+<PostList/>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import Post from '../components/Post';
+import PostList from '../components/PostList';
+import PostContent from '../components/PostContent';
 
 export default {
     data() {
+        return{
 
+        }
     },  
     components:{
-        Post
+        PostList,
+        PostContent
+    },
+    computed:{
+        ...mapGetters(['fetchedPosts'])
     }
 }
 </script>
