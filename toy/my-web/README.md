@@ -1,10 +1,19 @@
 # my-web
 
-## Project setup
-```
-npm install
-```
+## 사용 기술
+* vue-cli 3.0
+* vuex
+* vue-router
+* axios
+* markdown
 
+## Project setup
+### Project Create
+```
+vue create vue-news
+cd vue-news
+npm i vuex vue-router axios markdown
+```
 ### Compiles and hot-reloads for development
 ```
 npm run serve

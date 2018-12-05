@@ -7,5 +7,8 @@ export default {
     },
     fetchedPosts(state) {
         return state.posts;
+    },
+    isContent(state) {
+        return state.isContent;
     }
 };

@@ -17,17 +17,24 @@ export default new VueRouter({
         {
             path: '/posts',
             component: PostsView,
-            name: 'posts',
+            name: 'postList',
             beforeEnter(routeTo, routeFrom, next) {
                 store.dispatch('FETCH_POSTS');
                 next();
                 // dummy-data 를 사용하고 있기 때문에 주석처리. - 12.04
+                // store.dispatch('FETCH_POSTS');
                 // .then(() => next())
                 // .catch(() => console.log('fail'));
             },
-            children: [
-                { path: ':idx', component: HelloWorld }
-            ]
+            children: [{
+                path: ':idx',
+                component: PostsView,
+                name: 'postContent',
+                beforeEnter(routeTo, routeFrom, next) {
+                    store.dispatch('FETCH_POSTS', routeTo.params.idx)
+                    next();
+                }
+            }]
         },
         {
             path: '/git',

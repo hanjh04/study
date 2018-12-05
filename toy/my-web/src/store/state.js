@@ -1,5 +1,6 @@
 export default {
     repoData: {},
     repoContent: {},
-    posts: {}
+    posts: {},
+    isContent: false
 }

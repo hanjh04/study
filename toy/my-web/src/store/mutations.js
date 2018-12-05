@@ -7,5 +7,8 @@ export default {
     },
     SET_POSTS(state, posts) {
         state.posts = posts;
+    },
+    SET_ISCONTENT(state, isContent) {
+        state.isContent = isContent;
     }
 }

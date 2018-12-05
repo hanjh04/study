@@ -1,5 +1,5 @@
 import axios from 'axios';
-import POSTS from './dummy-data/posts/posts.json'
+import POSTS from './dummy-data/posts/posts.js'
 
 const git = {
     repo: 'https://api.github.com/repos/hanjh04/study/contents',
@@ -10,7 +10,7 @@ const git = {
 
 const api = {
     git,
-    posts: 'file///C:/Users/janghohan/Documents/GitHub/study/toy/my-web/src/api/dummy-data-posts/posts.json'
+    posts: 'file///C:/Users/janghohan/Documents/GitHub/study/toy/my-web/src/api/dummy-data-posts/posts.js'
 }
 
 function fetchGitRepo(filepath) {
@@ -23,10 +23,15 @@ function fetchGitContent(filepath) {
     return axios.get(api.git.content + '/' + filepath);
 }
 
-function fetchPosts() {
+function fetchPosts(idx) {
     // fake-api여서 주석처리. 12.04
     // return axios.get(api.posts);
-    return POSTS;
+    if (typeof idx === 'undefined') {
+        return POSTS;
+    } else {
+        return POSTS[idx];
+    }
+
 }
 
 export {
