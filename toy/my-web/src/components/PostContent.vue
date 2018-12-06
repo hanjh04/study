@@ -1,5 +1,6 @@
 <template>
-    <div v-html="toHtml(fetchedPosts.content)">
+    <div>
+        {{idx}}
     </div>
 </template>
 
@@ -10,6 +11,14 @@ const fs = require('fs');
 // console.log(fs)
 // console.log(markdown)
 export default {
+    data(){
+        return {
+            idx:"0"
+        }
+    },
+    created(){
+        this.idx = this.$route.params.idx
+    },
     computed:{
         ...mapGetters(['fetchedPosts'])
     },
