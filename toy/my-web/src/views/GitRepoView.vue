@@ -24,6 +24,15 @@ export default {
     components:{
         GitRepoContent,
         GitRepoDirectory
+    },
+        beforeCreate() {
+        console.log('beforeCreate')
+    },
+    created(){
+        console.log('aaa')
+        // s = d.createElement('script'),
+        // s.setAttribute('data-timestamp', +new Date());
+        // (d.head || d.body).appendChild(s);
     }
 }
 </script>

@@ -1,6 +1,11 @@
 <template>
     <div>
-        <component :is="isContent ? 'PostContent' : 'PostList'"></component>
+        <div>
+            <component :is="isContent ? 'PostContent' : 'PostList'"></component>
+        </div>
+        <div v-if="isContent == true">
+            <Comment/>
+        </div>
     </div>
 </template>
 
@@ -9,6 +14,7 @@ import store from '../store/index.js';
 import { mapGetters } from 'vuex';
 import PostList from '../components/PostList';
 import PostContent from '../components/PostContent';
+import Comment from '../components/Comment';
 
 export default {
     data() {
@@ -18,7 +24,8 @@ export default {
     },  
     components:{
         PostList,
-        PostContent
+        PostContent,
+        Comment
     },
     computed:{
         ...mapGetters(['fetchedPosts', 'isContent'])

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HelloWorld from '../components/HelloWorld';
+import NOTFOUND from '../components/NOTFOUND';
 // import GitRepo from '../components/GitRepo'
 import GitRepoView from '../views/GitRepoView'
 import PostsView from '../views/PostsView'
@@ -63,5 +64,10 @@ export default new VueRouter({
                     .catch(() => console.log('fail'));
             }
         },
+        {
+            path: '*',
+            component: NOTFOUND
+
+        }
     ]
 })

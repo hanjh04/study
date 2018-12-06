@@ -45,4 +45,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 4. git checkout ./
 
 ## todo
-* query string 전달하여 query string 인자별 다른 action 취하기
+* 소셜댓글 플러그인(disqus) 적용
