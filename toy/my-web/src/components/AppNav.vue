@@ -1,8 +1,12 @@
 <template>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/posts">Post</router-link> | 
-      <router-link to="/about">About</router-link>
+      <nav>
+        <ul>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/posts">Post</router-link></li>
+          <li><router-link to="/about">About</router-link></li>
+        </ul>
+      </nav>
     </div>
 </template>
 
@@ -13,5 +17,11 @@ export default {
 </script>
 
 <style>
-
+div #nav nav ul{
+  position:relative;margin:0px; padding:0px;
+}
+div #nav nav ul li{
+  padding:10px;
+  display:inline;
+}
 </style>

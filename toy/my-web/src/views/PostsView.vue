@@ -13,15 +13,20 @@ import PostContent from '../components/PostContent';
 export default {
     data() {
         return{
-
+            isContent: false
         }
-    },  
+    },
+    created(){
+        if(this.$route.params.idx){
+            this.isContent = true
+        }
+    },
     components:{
         PostList,
         PostContent
     },
     computed:{
-        ...mapGetters(['fetchedPosts', 'isContent'])
+        ...mapGetters(['fetchedPosts'])
     },
     beforeRouteUpdate:(to, from, next)=>{
         console.log('postsview => beforeRouteUpdate')

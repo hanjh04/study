@@ -31,7 +31,7 @@ export default new VueRouter({
                 component: PostsView,
                 name: 'postContent',
                 beforeEnter(routeTo, routeFrom, next) {
-                    store.dispatch('FETCH_POSTS', routeTo.params.idx)
+                    store.dispatch('FETCH_POSTCONTENT', routeTo.params.idx)
                     next();
                 }
             }]
@@ -51,7 +51,6 @@ export default new VueRouter({
             beforeEnter(routeTo, routeFrom, next) {
                 var fetchAction = '';
                 var path = '';
-                console.log(routeTo.path)
                 if (routeTo.query.type === 'd') {
                     fetchAction = 'FETCH_GITREPO';
                 } else {

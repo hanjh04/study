@@ -13,6 +13,8 @@
 vue create vue-news
 cd vue-news
 npm i vuex vue-router axios markdown
+npm i firebase --save
+npm i firebase @firebase/firestore-types
 ```
 ### Compiles and hot-reloads for development
 ```

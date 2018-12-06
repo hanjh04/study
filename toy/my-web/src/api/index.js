@@ -1,5 +1,6 @@
 import axios from 'axios';
-import POSTS from './dummy-data/posts/posts.js'
+import firebaseDB from '../../DB/dbInit'
+// import POSTS from './dummy-data/posts/posts.js'
 
 const git = {
     repo: 'https://api.github.com/repos/hanjh04/study/contents',
@@ -26,11 +27,14 @@ function fetchGitContent(filepath) {
 function fetchPosts(idx) {
     // fake-api여서 주석처리. 12.04
     // return axios.get(api.posts);
-    if (typeof idx === 'undefined') {
-        return POSTS;
-    } else {
-        return POSTS[idx];
-    }
+    return firebaseDB.collection('posts').orderBy('idx').get()
+
+
+    // if (typeof idx === 'undefined') {
+    //     return POSTS;
+    // } else {
+    //     return POSTS[idx];
+    // }
 
 }
 

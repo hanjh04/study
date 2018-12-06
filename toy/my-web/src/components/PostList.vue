@@ -4,7 +4,7 @@
             <li v-for="data in fetchedPosts" :key="data.idx">
                 <router-link :to="'/posts/'+data.idx">
                     <div class="title">
-                        {{data.title}}
+                        {{data.idx}}, {{data.title}}
                     </div>
                     <div class="content">
                         {{data.content}}
