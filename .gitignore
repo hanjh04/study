@@ -3,3 +3,5 @@ vue/my-todo/babel.config.js
 vue/my-todo/package-lock.json
 vue/my-todo/package.json
 vue/my-todo/README.md
+
+./node_modules
