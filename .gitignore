@@ -4,4 +4,5 @@ vue/my-todo/package-lock.json
 vue/my-todo/package.json
 vue/my-todo/README.md
 
-./node_modules
+node_modules
+node_modules/yargs/locales/pt_BR.json
