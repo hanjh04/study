@@ -17,11 +17,6 @@ import PostContent from '../components/PostContent';
 import Comment from '../components/Comment';
 
 export default {
-    data() {
-        return{
-            isContent: false
-        }
-    },
     created(){
         if(this.$route.params.idx){
             this.isContent = true
@@ -33,7 +28,7 @@ export default {
         Comment
     },
     computed:{
-        ...mapGetters(['fetchedPosts'])
+        ...mapGetters(['fetchedPosts', 'isContent'])
     },
     beforeRouteUpdate:(to, from, next)=>{
         console.log('postsview => beforeRouteUpdate')
@@ -42,14 +37,12 @@ export default {
             return from.matched[idx].path === item.path
         })
         if(routeToParent){
-            store.dispatch('FETCH_POSTS');
-            // store.dispatch('FETCH_POSTS');
-            // .then(() => next())
-            // .catch(() => console.log('fail'));
+            store.dispatch('FETCH_POSTS')
+                .then(() => next())
+                .catch(() => console.log('fail'));
         }
         next();
     }
-
 }
 </script>
 

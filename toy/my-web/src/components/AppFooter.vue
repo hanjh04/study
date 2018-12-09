@@ -1,6 +1,11 @@
 <template>
     <div>
-        <h1>Footer</h1>
+        <div class="contacts">
+            <ul>
+                <li>Contacts</li>
+                <a href="mailto:hanjh04@gmail.com">hanjh04@gmail.com</a>
+            </ul>
+        </div>
     </div>
 </template>
 

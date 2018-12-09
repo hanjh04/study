@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HelloWorld from '../components/HelloWorld';
+import Welcome from '../components/Welcome';
 import NOTFOUND from '../components/NOTFOUND';
-// import GitRepo from '../components/GitRepo'
 import GitRepoView from '../views/GitRepoView'
 import PostsView from '../views/PostsView'
+import About from '../components/About';
 import store from '../store/index.js';
+// import GitRepo from '../components/GitRepo'
 
 Vue.use(VueRouter);
 
@@ -13,19 +14,16 @@ export default new VueRouter({
     mode: 'history',
     routes: [{
             path: '/',
-            component: HelloWorld
+            component: Welcome
         },
         {
             path: '/posts',
             component: PostsView,
             name: 'postList',
             beforeEnter(routeTo, routeFrom, next) {
-                store.dispatch('FETCH_POSTS');
-                next();
-                // dummy-data 를 사용하고 있기 때문에 주석처리. - 12.04
-                // store.dispatch('FETCH_POSTS');
-                // .then(() => next())
-                // .catch(() => console.log('fail'));
+                store.dispatch('FETCH_POSTS')
+                    .then(() => next())
+                    .catch(() => console.log('fail'));
             },
             children: [{
                 path: ':idx',
@@ -33,11 +31,15 @@ export default new VueRouter({
                 name: 'postContent',
                 beforeEnter(routeTo, routeFrom, next) {
                     store.dispatch('FETCH_POSTCONTENT', routeTo.params.idx)
+                    console.log('idx ', routeTo.params.idx)
                     next();
                 }
             }]
         },
         {
+            path: '/about',
+            component: About
+        }, {
             path: '/git',
             component: GitRepoView,
             beforeEnter(routeTo, routeFrom, next) {

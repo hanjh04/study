@@ -18,11 +18,7 @@ export default {
             .catch(error => console.log(error))
     },
     FETCH_POSTS(context) {
-        // var data = fetchPosts(idx);
         var isContent = false;
-        // context.commit('SET_POSTS', data);
-        // context.commit('SET_ISCONTENT', isContent)
-        // return data
         var rtnArr = []
         return fetchPosts()
             .then(querySnapshot => {
@@ -36,11 +32,6 @@ export default {
                 return rtnArr
 
             })
-            // .then(response => {
-            //     context.commit('SET_POSTS', response.data);
-            //     context.commit('SET_ISCONTENT', isContent)
-            //     return response;
-            // })
             .catch(error => console.log(error))
     },
     FETCH_POSTCONTENT(context, idx) {
