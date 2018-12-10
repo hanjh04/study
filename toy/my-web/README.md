@@ -10,11 +10,11 @@
 ## Project setup
 ### Project Create
 ```
-vue create vue-news
-cd vue-news
+vue create my-web
+cd my-web
 npm i vuex vue-router axios markdown
-npm i firebase --save
 npm i firebase @firebase/firestore-types
+npm i bootstrap-vue
 ```
 ### Compiles and hot-reloads for development
 ```
@@ -48,3 +48,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## todo
 * 소셜댓글 플러그인(disqus) 적용
+* BootStrap 사용
+* 관리자 모드(로그인)
+
