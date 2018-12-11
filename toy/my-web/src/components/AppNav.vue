@@ -14,9 +14,14 @@
     </div> -->
 
     <div id="nav">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container">
-          <a class="navbar-brand" href="/">Lingi's Blog</a>
+          <div class="col-xs-6 col-md-3">
+          <a class="navbar-brand thumbnail" href="/">
+              <img src="../assets/thumbnail.png" style="height:40px;width:40px"/>
+              Lingi's Blog
+          </a>
+          </div>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
           <i class="fas fa-bars"></i>

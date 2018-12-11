@@ -1,15 +1,16 @@
 <template>
-    <div>
+    <footer class="card-footer">
         <div class="contacts">
             <ul>
                 <li>Contacts</li>
                 <a href="mailto:hanjh04@gmail.com">hanjh04@gmail.com</a>
             </ul>
         </div>
-    </div>
+    </footer>
 </template>
 
 <script>
+
 export default {
 
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <app-nav/>
+    <!-- <app-nav/> -->
     <app-header/>
     <router-view/>
     <app-footer/>
@@ -11,6 +11,8 @@
 import AppHeader from './components/AppHeader'
 import AppNav from './components/AppNav'
 import AppFooter from './components/AppFooter'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default{
   name:"App",
