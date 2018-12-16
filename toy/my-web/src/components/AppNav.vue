@@ -13,13 +13,13 @@
       </nav>
     </div> -->
 
-    <div id="nav">
-      <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div id="nav" >
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
           <div class="col-xs-6 col-md-3">
           <a class="navbar-brand thumbnail" href="/">
-              <img src="../assets/thumbnail.png" style="height:40px;width:40px"/>
-              Lingi's Blog
+            <img src="../assets/thumbnail.png" style="height:40px;width:40px"/>
+            Lingi's Blog
           </a>
           </div>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,26 +34,19 @@
             </ul>
           </div>
         </div>
+        <div class="masthead"></div>
       </nav>
+      
     </div>
 
 </template>
 
 <script>
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-
 export default {
 
 }
 </script>
 
 <style>
-/* div #nav nav ul{
-  position:relative;margin:0px; padding:0px;
-}
-div #nav nav ul li{
-  padding:10px;
-  display:inline;
-} */
+
 </style>

@@ -1,6 +1,6 @@
 <template>
-    <footer class="card-footer">
-        <div class="contacts">
+    <footer class="bd-footer text-muted">
+        <div class="container">
             <ul>
                 <li>Contacts</li>
                 <a href="mailto:hanjh04@gmail.com">hanjh04@gmail.com</a>
