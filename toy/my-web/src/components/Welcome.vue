@@ -1,13 +1,13 @@
 <template>
-  <div class="hello">
-    <img src="../assets/images/CAM00402.jpg" alt="" height="500" width="auto">
+  <div class="welcome">
+    <img src="../assets/images/CAM00402.jpg" alt="" >
     </br>Champs-Elysees Street Paris, 2013
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'welcome',
   props: {
     msg: String
   }
@@ -15,19 +15,14 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
+<style>
+.welcome{
+  display: block;
+
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.welcome img{
+  height:100%;
+  width:100%;
+  margin-top: 90px;  
 }
 </style>

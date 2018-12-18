@@ -3,12 +3,13 @@
         <ul>
             <li v-for="data in fetchedPosts" :key="data.idx">
                 <router-link :to="'/posts/'+data.idx">
-                    <div class="title">
+                    <b-card class="title" title="data.title">
                         {{data.idx}}, {{data.title}}
-                    </div>
-                    <div class="content">
-                        {{data.content}}
-                    </div>
+                        <p class="card-text">
+                            {{data.content}}
+                        </p>
+                    </b-card>
+
                 </router-link>
             </li>
         </ul>
