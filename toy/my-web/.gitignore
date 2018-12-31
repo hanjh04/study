@@ -20,13 +20,8 @@ yarn-error.log*
 *.sln
 *.sw*
 
-babel.config.js
-package-lock.json
-package.json
-
-
 css/*
 scss/*
-vendor/*
+# vendor/*
 
 DB/dbConfig.js

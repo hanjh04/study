@@ -15,6 +15,7 @@ cd my-web
 npm i vuex vue-router axios markdown
 npm i firebase @firebase/firestore-types
 npm i bootstrap-vue
+npm i jquery -s
 ```
 ### Compiles and hot-reloads for development
 ```
